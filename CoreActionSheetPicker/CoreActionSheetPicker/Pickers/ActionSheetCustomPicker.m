@@ -120,6 +120,12 @@
         [_delegate actionSheetPickerDidCancel:self origin:origin];
     }
 }
-
+- (void)destroyWindow_SWActionSheetWindow {
+    if ( [_delegate respondsToSelector:@selector(actionSheetPickerDidCancel:origin:)] )
+    {
+    
+        [_delegate actionSheetPickerDidCancel:self origin: [UIView new]];
+    }
+}
 
 @end

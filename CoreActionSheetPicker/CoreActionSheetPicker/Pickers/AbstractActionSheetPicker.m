@@ -161,10 +161,13 @@ CG_INLINE BOOL isIPhone4() {
         [self setTextColor: [UIColor labelColor]];
         self.titleTextAttributes = @{ NSForegroundColorAttributeName : UIColor.labelColor };
     }
-
+    // 点击蒙板的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(destroyWindow_SWActionSheetWindow) name: @"destroyWindow_SWActionSheetWindow" object:nil];
     return self;
 }
-
+- (void)destroyWindow_SWActionSheetWindow {
+    
+}
 
 - (void)setTextColor:(UIColor *)textColor {
     if (self.pickerTextAttributes) {

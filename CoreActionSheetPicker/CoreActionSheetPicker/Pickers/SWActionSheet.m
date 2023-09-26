@@ -70,6 +70,8 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
 {
     if (SWActionSheetWindow)
     {
+        /// 点击蒙板的通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"destroyWindow_SWActionSheetWindow" object:nil];
         [self actionSheetContainer].actionSheet = nil;
         SWActionSheetWindow.hidden = YES;
         if ([SWActionSheetWindow isKeyWindow])

@@ -122,5 +122,6 @@ static NSString *const kActionTarget = @"buttonActionTarget";
 
 // Hide picker programmatically
 - (void)hidePickerWithCancelAction;
-
+/// 收到点击蒙板的通知时会调用这个方法，由子类重写，不用调用super
+- (void)destroyWindow_SWActionSheetWindow;
 @end
