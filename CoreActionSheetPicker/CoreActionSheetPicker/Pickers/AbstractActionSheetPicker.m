@@ -335,9 +335,11 @@ CG_INLINE BOOL isIPhone4() {
 }
 
 - (void)dismissPicker {
-    if (self.actionSheet)
+    if (self.actionSheet){
+        /// 点击蒙板的通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"destroyWindow_SWActionSheetWindow" object:nil];
         [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-    else if (self.popOverViewController)
+    }else if (self.popOverViewController)
         [_popOverViewController dismissViewControllerAnimated:YES completion:nil];
     self.actionSheet = nil;
     self.popOverViewController = nil;
